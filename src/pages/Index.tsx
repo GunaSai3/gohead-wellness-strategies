@@ -30,9 +30,9 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-feature-bg flex flex-col">
       <Header />
-      <main className="container mx-auto px-4 pt-32 pb-16 flex-grow">
+      <main className="container mx-auto px-4 pt-24 pb-16 flex-grow">  {/* Reduced pt-32 to pt-24 */}
         {/* Welcome Hero Section */}
-        <div className="min-h-[80vh] flex flex-col items-center justify-center text-center mb-20 animate-fade-up">
+        <div className="min-h-[70vh] flex flex-col items-center justify-center text-center mb-20 animate-fade-up">  {/* Reduced min-h-[80vh] to min-h-[70vh] */}
           <h1 className="text-5xl md:text-7xl font-bold text-primary mb-6">
             Achieve More, <br /> Feel Better
           </h1>
