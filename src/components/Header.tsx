@@ -11,7 +11,7 @@ const Header = () => {
         <nav className="flex gap-4">
           <Button variant="ghost">Get Started</Button>
           <Button variant="ghost" onClick={() => navigate("/login")}>Login</Button>
-          <Button>Sign Up</Button>
+          <Button onClick={() => navigate("/signup")}>Sign Up</Button>
         </nav>
       </div>
     </header>
