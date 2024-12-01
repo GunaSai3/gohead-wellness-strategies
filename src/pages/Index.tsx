@@ -1,4 +1,5 @@
 import { Activity, Brain, List, Target } from "lucide-react";
+import Header from "@/components/Header";
 
 const features = [
   {
@@ -26,7 +27,8 @@ const features = [
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-feature-bg">
-      <main className="container mx-auto px-4 py-16">
+      <Header />
+      <main className="container mx-auto px-4 pt-32 pb-16">
         {/* Hero Section */}
         <div className="text-center mb-20 animate-fade-up">
           <h1 className="text-6xl md:text-7xl font-bold text-primary mb-8">
