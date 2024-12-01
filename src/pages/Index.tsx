@@ -30,7 +30,7 @@ const Index = () => {
         {/* Hero Section */}
         <div className="text-center mb-20 animate-fade-up">
           <h1 className="text-6xl md:text-7xl font-bold text-primary mb-8">
-            GoHead
+            GoAhead
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
             Empower your journey with smart tools for better productivity and mental wellness
