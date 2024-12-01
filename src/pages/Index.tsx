@@ -32,9 +32,7 @@ const Index = () => {
       <main className="container mx-auto px-4 pt-32 pb-16 flex-grow">
         {/* Welcome Section */}
         <div className="text-center mb-12 animate-fade-up">
-          <h2 className="text-2xl text-gray-600 font-light mb-4">
-            Welcome to
-          </h2>
+          {/* Intentionally left empty as per user request */}
         </div>
 
         {/* Hero Section */}
