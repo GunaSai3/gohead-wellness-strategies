@@ -1,6 +1,7 @@
 import { Activity, Brain, List, Target } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
 
 const features = [
   {
@@ -30,12 +31,26 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-white to-feature-bg flex flex-col">
       <Header />
       <main className="container mx-auto px-4 pt-32 pb-16 flex-grow">
-        {/* Welcome Section */}
-        <div className="text-center mb-12 animate-fade-up">
-          {/* Intentionally left empty as per user request */}
+        {/* Welcome Hero Section */}
+        <div className="min-h-[80vh] flex flex-col items-center justify-center text-center mb-20 animate-fade-up">
+          <h1 className="text-5xl md:text-7xl font-bold text-primary mb-6">
+            Achieve More, <br /> Feel Better
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-8">
+            Your journey to success shouldn't come at the cost of your well-being. 
+            Let's make progress together, one mindful step at a time.
+          </p>
+          <div className="flex gap-4 flex-wrap justify-center">
+            <Button size="lg" className="text-lg px-8">
+              Start Your Journey
+            </Button>
+            <Button size="lg" variant="outline" className="text-lg px-8">
+              Learn More
+            </Button>
+          </div>
         </div>
 
-        {/* Hero Section */}
+        {/* Original GoAhead Section */}
         <div className="text-center mb-20 animate-fade-up">
           <h1 className="text-6xl md:text-7xl font-bold text-primary mb-8">
             GoAhead
