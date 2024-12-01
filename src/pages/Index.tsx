@@ -1,5 +1,6 @@
 import { Activity, Brain, List, Target } from "lucide-react";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const features = [
   {
@@ -26,9 +27,9 @@ const features = [
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-feature-bg">
+    <div className="min-h-screen bg-gradient-to-b from-white to-feature-bg flex flex-col">
       <Header />
-      <main className="container mx-auto px-4 pt-32 pb-16">
+      <main className="container mx-auto px-4 pt-32 pb-16 flex-grow">
         {/* Hero Section */}
         <div className="text-center mb-20 animate-fade-up">
           <h1 className="text-6xl md:text-7xl font-bold text-primary mb-8">
@@ -56,6 +57,7 @@ const Index = () => {
           ))}
         </div>
       </main>
+      <Footer />
     </div>
   );
 };
