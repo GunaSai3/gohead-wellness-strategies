@@ -30,6 +30,13 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-b from-white to-feature-bg flex flex-col">
       <Header />
       <main className="container mx-auto px-4 pt-32 pb-16 flex-grow">
+        {/* Welcome Section */}
+        <div className="text-center mb-12 animate-fade-up">
+          <h2 className="text-2xl text-gray-600 font-light mb-4">
+            Welcome to
+          </h2>
+        </div>
+
         {/* Hero Section */}
         <div className="text-center mb-20 animate-fade-up">
           <h1 className="text-6xl md:text-7xl font-bold text-primary mb-8">
