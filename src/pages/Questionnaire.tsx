@@ -4,8 +4,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
+import { useNavigate } from "react-router-dom";
 
 const Questionnaire = () => {
+  const navigate = useNavigate();
   const [step, setStep] = useState(1);
   const [numTasks, setNumTasks] = useState<number>(0);
   const [tasks, setTasks] = useState<string[]>([]);
@@ -29,6 +31,12 @@ const Questionnaire = () => {
     const newTasks = [...tasks];
     newTasks[index] = taskText;
     setTasks(newTasks);
+  };
+
+  const handleSubmit = () => {
+    // Here you would typically save the form data
+    console.log("Form submitted");
+    navigate("/dashboard");
   };
 
   const renderStep = () => {
@@ -145,7 +153,7 @@ const Questionnaire = () => {
                 {step < 5 ? (
                   <Button onClick={handleNext}>Next</Button>
                 ) : (
-                  <Button onClick={() => console.log("Form submitted")}>Submit</Button>
+                  <Button onClick={handleSubmit}>Submit</Button>
                 )}
               </div>
             </div>
