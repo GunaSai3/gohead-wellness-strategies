@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
 import Questionnaire from "./pages/Questionnaire";
 import Dashboard from "./pages/Dashboard";
+import Analysis from "./pages/Analysis";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/signup" element={<SignUp />} />
           <Route path="/questionnaire" element={<Questionnaire />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/analysis" element={<Analysis />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
