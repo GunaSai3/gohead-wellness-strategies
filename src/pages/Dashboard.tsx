@@ -7,8 +7,10 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [tasks] = useState([
     { id: 1, title: "Complete project documentation", completed: false },
     { id: 2, title: "Review pull requests", completed: true },
@@ -28,10 +30,20 @@ const Dashboard = () => {
             </SheetTrigger>
             <SheetContent side="left" className="w-[300px]">
               <nav className="flex flex-col gap-4 mt-8">
-                <Button variant="ghost" className="justify-start">
+                <Button 
+                  variant="ghost" 
+                  className="justify-start"
+                  onClick={() => navigate('/dashboard')}
+                >
                   Dashboard
                 </Button>
-                <Button variant="ghost" className="justify-start">
+                <Button 
+                  variant="ghost" 
+                  className="justify-start"
+                  onClick={() => {
+                    document.querySelector('[value="analysis"]')?.click();
+                  }}
+                >
                   Analysis
                 </Button>
                 <Button variant="ghost" className="justify-start">
