@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Menu } from "lucide-react";
 import {
   Sheet,
@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const [activeTab, setActiveTab] = useState("dashboard");
   const [tasks] = useState([
     { id: 1, title: "Complete project documentation", completed: false },
     { id: 2, title: "Review pull requests", completed: true },
@@ -33,16 +34,14 @@ const Dashboard = () => {
                 <Button 
                   variant="ghost" 
                   className="justify-start"
-                  onClick={() => navigate('/dashboard')}
+                  onClick={() => setActiveTab("dashboard")}
                 >
                   Dashboard
                 </Button>
                 <Button 
                   variant="ghost" 
                   className="justify-start"
-                  onClick={() => {
-                    document.querySelector('[value="analysis"]')?.click();
-                  }}
+                  onClick={() => setActiveTab("analysis")}
                 >
                   Analysis
                 </Button>
@@ -56,12 +55,18 @@ const Dashboard = () => {
 
         {/* Main Content */}
         <div className="pt-20">
-          <Tabs defaultValue="dashboard" className="w-full">
+          <Tabs 
+            value={activeTab} 
+            onValueChange={setActiveTab} 
+            defaultValue="dashboard" 
+            className="w-full"
+          >
             <TabsList className="grid w-full grid-cols-2 mb-8">
               <TabsTrigger value="dashboard" className="text-lg">Dashboard</TabsTrigger>
               <TabsTrigger value="analysis" className="text-lg">Analysis</TabsTrigger>
             </TabsList>
 
+            {/* ... keep existing code (TabsContent for dashboard and analysis) */}
             <TabsContent value="dashboard" className="mt-6">
               <div className="bg-white rounded-xl shadow-lg p-6">
                 <h2 className="text-2xl font-bold text-primary mb-6">Today's Tasks</h2>
