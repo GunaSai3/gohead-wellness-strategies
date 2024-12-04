@@ -188,7 +188,7 @@ const Dashboard = () => {
                     </Select>
                     <Button
                       variant={task.completed ? "outline" : "default"}
-                      size="sm"
+                      size="sm"  // Explicitly set size to "sm" to match the dropdown's size
                       onClick={() => handleToggleComplete(task.id)}
                     >
                       {task.completed ? "Completed" : "Mark Complete"}
