@@ -12,15 +12,7 @@ export function SettingsBreadcrumb() {
   return (
     <Breadcrumb>
       <BreadcrumbList>
-        <BreadcrumbItem>
-          <BreadcrumbLink asChild>
-            <Link to="/">Home</Link>
-          </BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbPage>Settings</BreadcrumbPage>
-        </BreadcrumbItem>
+        <BreadcrumbPage>Settings</BreadcrumbPage>
       </BreadcrumbList>
     </Breadcrumb>
   );
