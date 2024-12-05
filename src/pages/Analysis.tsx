@@ -33,7 +33,11 @@ const Analysis = () => {
                 >
                   Analysis
                 </Button>
-                <Button variant="ghost" className="justify-start">
+                <Button 
+                  variant="ghost" 
+                  className="justify-start"
+                  onClick={() => navigate("/settings")}
+                >
                   Settings
                 </Button>
               </nav>

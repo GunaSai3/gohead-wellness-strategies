@@ -1,51 +1,10 @@
-import { useState } from "react";
 import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { TaskInput } from "@/components/tasks/TaskInput";
-import { TaskList } from "@/components/tasks/TaskList";
-import { Task, TaskPriority } from "@/components/tasks/TaskItem";
 import { useNavigate } from "react-router-dom";
 
-const Dashboard = () => {
+const Settings = () => {
   const navigate = useNavigate();
-  const [newTask, setNewTask] = useState("");
-  const [tasks, setTasks] = useState<Task[]>([
-    { id: 1, title: "Complete project documentation", completed: false, priority: "urgent-important" },
-    { id: 2, title: "Review pull requests", completed: true, priority: "important" },
-    { id: 3, title: "Team meeting at 2 PM", completed: false, priority: "neither" },
-  ]);
-
-  const handleAddTask = () => {
-    if (newTask.trim()) {
-      setTasks([
-        ...tasks,
-        {
-          id: tasks.length + 1,
-          title: newTask.trim(),
-          completed: false,
-          priority: "neither",
-        },
-      ]);
-      setNewTask("");
-    }
-  };
-
-  const handleToggleComplete = (taskId: number) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === taskId ? { ...task, completed: !task.completed } : task
-      )
-    );
-  };
-
-  const handlePriorityChange = (taskId: number, priority: TaskPriority) => {
-    setTasks(
-      tasks.map((task) =>
-        task.id === taskId ? { ...task, priority } : task
-      )
-    );
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-feature-bg">
@@ -89,19 +48,25 @@ const Dashboard = () => {
         {/* Main Content */}
         <div className="pt-20">
           <div className="bg-white rounded-xl shadow-lg p-6">
-            <h2 className="text-2xl font-bold text-primary mb-6">Today's Tasks</h2>
+            <h2 className="text-2xl font-bold text-primary mb-6">Settings</h2>
             
-            <TaskInput
-              newTask={newTask}
-              setNewTask={setNewTask}
-              handleAddTask={handleAddTask}
-            />
-
-            <TaskList
-              tasks={tasks}
-              onToggleComplete={handleToggleComplete}
-              onPriorityChange={handlePriorityChange}
-            />
+            {/* Settings Content */}
+            <div className="space-y-6">
+              <div className="p-4 rounded-lg border border-gray-200">
+                <h3 className="text-lg font-semibold mb-2">Profile Settings</h3>
+                <p className="text-gray-600">Manage your profile information and preferences</p>
+              </div>
+              
+              <div className="p-4 rounded-lg border border-gray-200">
+                <h3 className="text-lg font-semibold mb-2">Notification Settings</h3>
+                <p className="text-gray-600">Configure your notification preferences</p>
+              </div>
+              
+              <div className="p-4 rounded-lg border border-gray-200">
+                <h3 className="text-lg font-semibold mb-2">Privacy Settings</h3>
+                <p className="text-gray-600">Manage your privacy and security settings</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -109,4 +74,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Settings;
