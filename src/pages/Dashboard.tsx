@@ -63,6 +63,13 @@ const Dashboard = () => {
                 <Button 
                   variant="ghost" 
                   className="justify-start"
+                  onClick={() => navigate("/")}
+                >
+                  Home
+                </Button>
+                <Button 
+                  variant="ghost" 
+                  className="justify-start"
                   onClick={() => navigate("/dashboard")}
                 >
                   Dashboard
